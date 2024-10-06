@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Basic Dark Mode Styles */
+        body {
+            background-color: #121212; /* Dark background */
+            color: white; /* Text color */
+            font-family: Arial, sans-serif;
+            transition: background-color 0.3s, color 0.3s; /* Smooth transitions */
+        }
+
+        /* Hero Section Styles */
+        .hero {
+            height: 100vh;
+            background: url('img.jpg') center/cover no-repeat; /* Background image */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            transition: opacity 0.5s ease; /* Smooth transition */
+            opacity: 1; /* Initial opacity */
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2; /* Ensures content is above the background */
+        }
+
+        .hero h1 {
+            color: white;
+            font-weight: bold;
+            font-size: 48px;
+        }
+
+        /* Button Styles */
+        .btn {
+            background-color: #007bff; /* Button Color */
+            color: #fff; /* Text Color */
+            padding: 10px 20px; /* Padding */
+            text-decoration: none; /* No underline */
+            font-size: 20px; /* Font Size */
+            border-radius: 25px; /* Rounded Corners */
+            transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease; /* Smooth Transition */
+        }
+
+        /* Floating Effect for All Buttons */
+        .btn:hover {
+            background-color: #0056b3; /* Darker Color on Hover */
+            transform: translateY(-10px) rotate(3deg); /* Float Effect */
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Shadow Effect */
+        }
+
+        /* Projects Section */
+        .projects {
+            padding: 50px;
+            text-align: center;
+            background-color: rgba(28, 28, 28, 0.8); /* Slightly transparent background */
+            opacity: 1; /* Ensure it starts fully visible */
+            transition: opacity 0.5s ease-in; /* Optional smooth transition */
+        }
+
+        /* Project Items */
+        .project-item {
+            background-color: rgba(51, 51, 51, 0.8); /* Dark background with 80% opacity */
+            margin: 20px auto;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            max-width: 500px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        /* Floating Effect for Project Items */
+        .project-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Contact and Social Section */
+        .contact-section {
+            display: flex;
+            justify-content: space-around;
+            padding: 50px;
+            background-color: #1c1c1c;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .contact p {
+            margin: 10px 0;
+        }
+
+        /* Social Links */
+        .social-links {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .social-links a {
+            color: #007bff;
+            margin: 0 10px;
+            text-decoration: none;
+            font-size: 20px;
+        }
+
+        .social-links a:hover {
+            color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="hero-content">
+            <h1>Hey, I'm Sambit!</h1>
+            <a href="#projects" class="btn">See My Work</a>
+        </div>
+    </header>
+
+    <!-- Second Page: Projects Section -->
+<section id="projects" class="projects">
+    <h2>My Projects</h2>
+    <div class="project-item">
+        <h3>Project 1 Title</h3>
+        <p>You will see something here but not right now.</p>
+    </div>
+    <div class="project-item">
+        <h3>Project 2 Title</h3>
+        <p>You will see something here but not right now.</p>
+    </div>
+</section>
+
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <footer class="social-links">
+            <h2>Find Me on Social Media</h2>
+            <a href="https://github.com/yourusername" target="_blank">GitHub</a>
+            <a href="https://linkedin.com/in/yourusername" target="_blank">LinkedIn</a>
+        </footer>
+        
+        <div class="contact">
+            <h2>Contact Me</h2>
+            <p>Email: satapathysambit30@gmail.com</p>
+            <p>Phone: +91 **********</p>
+            <p>Location: India</p>
+        </div>
+    </section>
+
+    <!-- JavaScript for Smooth Scrolling & Fade Effect -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const heroSection = document.querySelector('.hero');
+            const projectsSection = document.querySelector('.projects');
+            const button = document.querySelector('.btn');
+
+            // Fade out the hero section as the user scrolls
+            window.addEventListener('scroll', () => {
+                const scrollY = window.scrollY; // Get the vertical scroll position
+                const heroHeight = heroSection.offsetHeight; // Get the height of the hero section
+
+                // Calculate new opacity based on scroll position
+                if (scrollY < heroHeight) {
+                    // Fade out the hero section
+                    const opacity = 1 - (scrollY / heroHeight); // Calculate opacity based on scroll
+                    heroSection.style.opacity = opacity; // Set the opacity
+                } else {
+                    // Ensure hero section is fully faded out
+                    heroSection.style.opacity = 0;
+                }
+            });
+
+            // Scroll to projects section when the button is clicked
+            button.addEventListener('click', function(e) {
+                e.preventDefault();
+                projectsSection.scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+    </script>
+</body>
+</html>

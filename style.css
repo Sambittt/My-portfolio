@@ -1,0 +1,112 @@
+/* Basic Dark Mode Styles */
+body {
+    background-color: #121212; /* Dark background */
+    color: white; /* Text color */
+    font-family: Arial, sans-serif;
+    transition: background-color 0.3s, color 0.3s; /* Smooth transitions */
+}
+
+/* Hero Section Styles */
+.hero {
+    height: 100vh;
+    background: url('img.jpg') center/cover no-repeat; /* Background image */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2; /* Ensures content is above the background */
+}
+
+.hero h1 {
+    color: white;
+    font-weight: bold;
+    font-size: 48px;
+}
+
+/* Button Styles */
+.btn {
+    background-color: #007bff; /* Button Color */
+    color: #fff; /* Text Color */
+    padding: 10px 20px; /* Padding */
+    text-decoration: none; /* No underline */
+    font-size: 20px; /* Font Size */
+    border-radius: 25px; /* Rounded Corners */
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease; /* Smooth Transition */
+}
+
+/* Floating Effect for All Buttons */
+.btn:hover {
+    background-color: #0056b3; /* Darker Color on Hover */
+    transform: translateY(-10px) rotate(3deg); /* Float Effect */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Shadow Effect */
+}
+
+/* Projects Section */
+.projects {
+    height: 100vh;
+    background: url('img2.jpg') center/cover no-repeat;
+    padding: 100px;
+    text-align: center;
+    background-color: rgba(28, 28, 28, 0.8); /* Slightly transparent background */
+    opacity: 0; /* Start hidden */
+    transition: opacity 0.5s ease-in; /* Transition for fading in */
+}
+
+/* Project Items */
+.project-item {
+    background-color: rgba(200, 200, 200, 0.8); /* Dark background with 80% opacity */
+    margin: 20px auto;
+    padding: 30px; /* Increased padding */
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(200, 200, 200, 0.1);
+    max-width: 600px; /* Increased max width */
+    min-height: 150px; /* Set a minimum height if needed */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Floating Effect for Project Items */
+.project-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Contact and Social Section */
+.contact-section {
+    display: flex;
+    justify-content: space-around;
+    padding: 50px;
+    background-color: #1c1c1c;
+}
+
+/* Contact Section */
+.contact {
+    padding: 20px;
+    text-align: center;
+}
+
+.contact p {
+    margin: 10px 0;
+}
+
+/* Social Links */
+.social-links {
+    padding: 20px;
+    text-align: center;
+}
+
+.social-links a {
+    color: #007bff;
+    margin: 0 10px;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.social-links a:hover {
+    color: #0056b3;
+}
